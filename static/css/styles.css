@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Avant-Garde-Boldest';
+  src: url('../fonts/boldest.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Avant-Garde-Bold';
+  src: url('../fonts/bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Avant-Garde-Book';
+  src: url('../fonts/book.woff2') format('woff2');
+}
+* {
+  background-color: #0059a6;
+  color: #fff;
+  font-family: 'Avant-Garde-Book', sans-serif;
+  }
+h1 { text-align: center }
+input[type="submit"] {
+  background-color: #6dd2f5;
+  padding: 20px 40px 20px;
+  border:none;
+  border-radius: 2px;
+  color:rgb(33,33,33);
+  font-size:12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+}
+.container {
+  margin: 40px;
+}
+.grid {
+  display: grid;
+  place-items: center;
+  min-height: 80vh;
+}
+.image-uploader {
+  border: 1px dashed #7cd1e4;
+  padding: 20px;
+}

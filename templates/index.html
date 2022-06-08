@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+      <div class="grid">
+        <div>
+          <h1 class="text-center">{% block title %} In-Situ Image Generator {% endblock %}</h1>
+          <div class="image-uploader">
+            <form method="post" target="_blank" enctype="multipart/form-data">
+              <select name="site-type">
+                <option value="d48">D48</option>
+                <option value="d96">D96</option>
+                <option value="d6">D6</option>
+              </select>
+              <input class="form-control" type="file" name="file">
+              <input class="form-control" type="submit" value="Upload">
+            </form>
+        </div>
+      </div>
+  </div>
+{% endblock %}
