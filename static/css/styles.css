@@ -25,6 +25,9 @@ h1 { text-align: center }
   place-items: center;
   min-height: 80vh;
 }
+.content-block {
+  width:50%
+}
 .image-uploader {
   border: 1px dashed #7cd1e4;
   padding: 20px;
@@ -80,4 +83,16 @@ input[type="submit"] {
 
 .file-name {
   text-align:center;
+}
+
+#img-preview {
+  display: none;
+  width: 100%;
+  border: 2px dashed #333;
+  margin-bottom: 20px;
+}
+#img-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

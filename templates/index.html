@@ -3,15 +3,16 @@
 {% block content %}
     <div class="container">
       <div class="grid">
-        <div>
+        <div class="content-block">
           <h1 class="text-center">{% block title %} In-Situ Image Generator {% endblock %}</h1>
           <div class="image-uploader">
             <form method="post" target="_blank" enctype="multipart/form-data">
-              <select name="site-type">
+              <!-- <select name="site-type">
                 <option value="d48">D48</option>
                 <option value="d96">D96</option>
                 <option value="d6">D6</option>
-              </select>
+              </select> -->
+              <div id="img-preview"></div>
               <div class="btn-group">
                 <div class="file-input">
                   <input id="file" class="file" type="file" name="file">

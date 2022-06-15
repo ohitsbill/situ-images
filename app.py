@@ -34,8 +34,9 @@ def index():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             # Give the filename a unique ID
-            site_type = request.form.get('site-type')
-            file_id = str(uuid.uuid1())+"-"+site_type+"-"+filename
+            # site_type = request.form.get('site-type')
+            # file_id = str(uuid.uuid1())+"-"+site_type+"-"+filename
+            file_id = str(uuid.uuid1())+"-"+filename
 
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], file_id))
             return redirect(url_for('download_file', name=file_id))
@@ -46,17 +47,31 @@ def index():
 def download_file(name):
 
     flat = Image.open('static/uploads/' + name)
+    width, height = flat.size
+    print(width, height)
 
     # Check which mockup is required
-    if "d48" in name:
+    # if "d48" in name:
+    #     mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Wide-Situ.jpg'))
+    #     area = (276,146,1670,843)
+    #     size = (1394, 697)
+    # elif "d6" in name:
+    #     mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Portrait-Situ.jpg'))
+    #     area = (699,99,1217,875)
+    #     size = (518, 776)
+    # elif "d96" in name:
+    #     mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Superwide-Situ.jpg'))
+    #     area = (285,334,1707,678)
+    #     size = (1422, 344)
+    if width == 1600 and height == 800:
         mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Wide-Situ.jpg'))
         area = (276,146,1670,843)
         size = (1394, 697)
-    elif "d6" in name:
+    elif width == 1078 and height == 1616:
         mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Portrait-Situ.jpg'))
         area = (699,99,1217,875)
         size = (518, 776)
-    elif "d96" in name:
+    elif width == 2981 and height == 721:
         mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Superwide-Situ.jpg'))
         area = (285,334,1707,678)
         size = (1422, 344)
