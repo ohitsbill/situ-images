@@ -7,10 +7,12 @@ from PIL import Image
 import uuid
 
 UPLOAD_FOLDER = join(dirname(realpath(__file__)), 'static/uploads')
+THIS_FOLDER = join(dirname(realpath(__file__)))
 ALLOWED_EXTENSIONS = {'jpg', 'jpeg'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['THIS_FOLDER'] = THIS_FOLDER
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -47,15 +49,15 @@ def download_file(name):
 
     # Check which mockup is required
     if "d48" in name:
-        mockup = Image.open('static/mockups/wide-situ.jpg')
+        mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Wide-Situ.jpg'))
         area = (276,146,1670,843)
         size = (1394, 697)
     elif "d6" in name:
-        mockup = Image.open('static/mockups/portrait-situ.jpg')
+        mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Portrait-Situ.jpg'))
         area = (699,99,1217,875)
         size = (518, 776)
     elif "d96" in name:
-        mockup = Image.open('static/mockups/superwide-situ.jpg')
+        mockup = Image.open(os.path.join(app.config['THIS_FOLDER'], 'static/mockups/Superwide-Situ.jpg'))
         area = (285,334,1707,678)
         size = (1422, 344)
 
@@ -64,5 +66,5 @@ def download_file(name):
     # Paste uploaded image into mockup
     mockup.paste(flat, area)
     # Save new image and return it
-    mockup.save(os.path.join(app.config['UPLOAD_FOLDER'], name+'situ.jpg'))
-    return send_from_directory(app.config["UPLOAD_FOLDER"], name+'situ.jpg')
+    mockup.save(os.path.join(app.config['UPLOAD_FOLDER'], 'situ-' + name))
+    return send_from_directory(app.config["UPLOAD_FOLDER"], 'situ-' + name)
