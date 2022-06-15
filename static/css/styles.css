@@ -16,16 +16,7 @@
   font-family: 'Avant-Garde-Book', sans-serif;
   }
 h1 { text-align: center }
-input[type="submit"] {
-  background-color: #6dd2f5;
-  padding: 20px 40px 20px;
-  border:none;
-  border-radius: 2px;
-  color:rgb(33,33,33);
-  font-size:12px;
-  line-height: 12px;
-  letter-spacing: 1px;
-}
+
 .container {
   margin: 40px;
 }
@@ -37,4 +28,56 @@ input[type="submit"] {
 .image-uploader {
   border: 1px dashed #7cd1e4;
   padding: 20px;
+}
+
+.image-uploader select {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+
+.btn-group {
+    display:grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+
+input[type="submit"] {
+  background-color: #6dd2f5;
+  padding: 20px 40px 20px;
+  border:none;
+  border-radius: 2px;
+  color:rgb(33,33,33);
+  font-size:12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+}
+
+.file-input label {
+  display: block;
+  padding: 20px 40px 20px;
+  position: relative;
+  border-radius: 2px;
+  background-color: #6dd2f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:rgb(33,33,33);
+  font-size:12px;
+  line-height: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform .2s ease-out;
+}
+
+.file-name {
+  text-align:center;
 }

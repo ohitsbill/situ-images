@@ -66,5 +66,5 @@ def download_file(name):
     # Paste uploaded image into mockup
     mockup.paste(flat, area)
     # Save new image and return it
-    mockup.save(os.path.join(app.config['UPLOAD_FOLDER'], 'situ-' + name))
-    return send_from_directory(app.config["UPLOAD_FOLDER"], 'situ-' + name)
+    mockup.save(os.path.join(app.config['UPLOAD_FOLDER'], name))
+    return send_from_directory(app.config["UPLOAD_FOLDER"], name)
