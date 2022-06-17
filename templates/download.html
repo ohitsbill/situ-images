@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+      <div class="grid">
+        <div class="content-block">
+          <h1 class="text-center">{% block title %} Download Image {% endblock %}</h1>
+          <div class="image-uploader">
+            <img src="{{ img_url }}" alt="">
+        </div>
+      </div>
+  </div>
+{% endblock %}
