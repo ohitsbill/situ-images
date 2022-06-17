@@ -16,7 +16,7 @@
   font-family: 'Avant-Garde-Book', sans-serif;
   }
 h1, p { text-align: center }
-
+.text-small { font-size: .7rem; }
 .container {
   margin: 40px;
 }
