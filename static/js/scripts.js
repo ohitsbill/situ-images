@@ -1,5 +1,6 @@
 const chooseFile = document.getElementById("file");
 const imgPreview = document.getElementById("img-preview");
+const place = document.getElementById("place");
 const descTxt = document.querySelector(".descTxt");
 const fileTxt = document.querySelector(".file-txt");
 
@@ -7,6 +8,7 @@ chooseFile.addEventListener("change", function () {
   getImgData();
   descTxt.classList.add("hide");
   fileTxt.classList.add("show");
+  place.removeAttribute("disabled");
 });
 
 function getImgData() {
