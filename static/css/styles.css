@@ -31,6 +31,8 @@ h1, p { text-align: center }
 .image-uploader {
   border: 1px dashed #7cd1e4;
   padding: 20px;
+  display:grid;
+  justify-items:center;
 }
 
 .image-uploader select {
